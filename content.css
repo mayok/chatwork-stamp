@@ -1,0 +1,30 @@
+._ext_stamp_icon {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 24px;
+  opacity: 0.8;
+  margin: 0 4px;
+}
+
+._ext_stamp_icon:hover {
+  opacity: 1;
+}
+
+._ext_stamp_icon_tag {
+  -webkit-user-select: none;
+  align-items: center;
+  border-radius: 2px;
+  color: #ffffff;
+  display: flex;
+  font-family: -apple-system, BlinkMacSystemFont, ".SFNSDisplay-Regular", "Helvetica Neue", "Hiragino Sans",
+    "ヒラギノ角ゴシック", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", "MS PGothic",
+    "ＭＳ Ｐゴシック", sans-serif;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 2px 4px;
+}
+
+._ext_stamp_icon_tag {
+  background-color: #444444;
+}
