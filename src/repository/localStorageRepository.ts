@@ -5,11 +5,13 @@ import { Repository, Stamp, Stamps } from "../interfaces";
 class localStorageRepository implements Repository {
   constructor() {}
 
+  // Todo: immutable
   public save = (image: Stamp) => {
     const stamps = window.localStorage.getItem("stamps");
     if (!!stamps) {
       const json = JSON.parse(stamps);
-      window.localStorage.setItem("stamps", JSON.stringify(json.stamps.push(image)));
+      json.stamps.push(image);
+      window.localStorage.setItem("stamps", JSON.stringify(json));
     } else {
       const stamps = new Array();
       stamps.push(image);

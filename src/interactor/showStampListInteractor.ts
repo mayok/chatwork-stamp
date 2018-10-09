@@ -24,9 +24,9 @@ class showStampListInteractor implements showStampListUseCase {
   // Todo: でかい
   // Todo: stamp 追加と DOM を同期させたい !
   show(): void {
-    // もし .stampListContainer が存在しなかったら 作る
-    if (!document.querySelector(".stampList")) {
-      const html = `<div class="stampList"><div class="registerStamp">登録</div></div>`;
+    // もし ._ext_stamp_list が存在しなかったら 作る
+    if (!document.querySelector("._ext_stamp_list")) {
+      const html = `<div class="_ext_stamp_list"><div class="_ext_stamp_button">登録</div></div>`;
       const el = document.createElement("template");
       el.insertAdjacentHTML("beforeend", html);
 
@@ -34,7 +34,7 @@ class showStampListInteractor implements showStampListUseCase {
 
       // Todo: できれば showStampListInteractor の中に入れたくない
       // スタンプの登録
-      document.querySelector(".registerStamp").addEventListener("click", this.register.regist, false);
+      document.querySelector("._ext_stamp_button").addEventListener("click", this.register.regist, false);
 
       const container = document.createElement("ul");
       const fragment = document.createDocumentFragment();
@@ -54,10 +54,12 @@ class showStampListInteractor implements showStampListUseCase {
 
       // Todo: es6 way
       // ChildNode.before(newNode)
-      const refNode = document.querySelector(".registerStamp");
+      const refNode = document.querySelector("._ext_stamp_button");
       refNode.parentNode.insertBefore(container, refNode);
     }
-    document.querySelector(".stampList").classList.toggle("active");
+    document.querySelector("._ext_stamp_list").classList.toggle("active");
+
+    // Todo: ._ext_stamp_list が active でなかったら 消す
   }
 }
 
